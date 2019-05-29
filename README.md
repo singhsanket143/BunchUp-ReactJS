@@ -8,4 +8,4 @@ To get started and run the app:
 - Run `npm install` to install the corresponding node packages
 - Run `npm start` to run the app on [http://localhost:3000](http://localhost:3000)
 
-![Alt Text](https://imgur.com/a/7Uj12JP)
+![Alt Text](snaps/1.png?raw=true "Title")
