@@ -61,7 +61,8 @@ class EventDashboard extends React.Component {
 
     this.state = {
       events: eventsDashboard,
-      isOpen: false
+      isOpen: false,
+      selectedEvent: null
     };
 
     // this.handleFormOpen = this.handleFormOpen.bind(this); Use this when not using arrow function
@@ -69,11 +70,19 @@ class EventDashboard extends React.Component {
 
   handleFormOpen = msg => {
     console.log(msg);
-    this.setState({ isOpen: true });
+    this.setState({ isOpen: true, selectedEvent: null });
   };
 
   handleFormCancel = () => {
     this.setState({ isOpen: false });
+  };
+
+  handleEditEvent = eventToUpdate => () => {
+    console.log(eventToUpdate);
+    this.setState({
+      selectedEvent: eventToUpdate,
+      isOpen: true
+    });
   };
 
   handleCreateEvent = newEvent => {
@@ -87,10 +96,14 @@ class EventDashboard extends React.Component {
   };
 
   render = () => {
+    const { selectedEvent } = this.state;
     return (
       <Grid>
         <Grid.Column width={10}>
-          <EventList events={this.state.events} />
+          <EventList
+            onEventEdit={this.handleEditEvent}
+            events={this.state.events}
+          />
         </Grid.Column>
         <Grid.Column width={6}>
           <Button
@@ -100,6 +113,7 @@ class EventDashboard extends React.Component {
           />
           {this.state.isOpen && (
             <EventForm
+              selectedEvent={selectedEvent}
               createEvent={this.handleCreateEvent}
               handleCancel={this.handleFormCancel}
             />
