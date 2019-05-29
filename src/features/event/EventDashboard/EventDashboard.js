@@ -8,7 +8,7 @@ const eventsDashboard = [
   {
     id: "1",
     title: "Machine Learning Workshop At Coding Blocks",
-    date: "2018-03-27T11:00:00+00:00",
+    date: "2018-03-27",
     category: "Technology",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sollicitudin ligula eu leo tincidunt, quis scelerisque magna dapibus. Sed eget ipsum vel arcu vehicula ullamcorper.",
@@ -32,7 +32,7 @@ const eventsDashboard = [
   {
     id: "2",
     title: "GSoC Meetup At Coding Blocks",
-    date: "2018-03-28T14:00:00+00:00",
+    date: "2018-03-28",
     category: "Technology and Culture",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sollicitudin ligula eu leo tincidunt, quis scelerisque magna dapibus. Sed eget ipsum vel arcu vehicula ullamcorper.",
