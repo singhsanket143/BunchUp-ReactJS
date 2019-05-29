@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
+import App from "./app/layout/App";
 import * as serviceWorker from "./serviceWorker";
 
 const rootEl = document.getElementById("root");
@@ -13,7 +13,7 @@ let render = () => {
 // Adding Hot Reload using Webpacks module.hot
 ReactDOM.render(<App />, rootEl);
 if (module.hot) {
-  module.hot.accept("./App", () => {
+  module.hot.accept(App, () => {
     setTimeout(render);
   });
 }
