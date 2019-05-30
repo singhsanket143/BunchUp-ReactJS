@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 
-import testReducer from "./testReducer";
+import testReducer from "../../features/testArea/testReducer";
 
 const rootReducer = combineReducers({
   test: testReducer
