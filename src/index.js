@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import App from "./app/layout/App";
 import "semantic-ui-css/semantic.min.css";
@@ -8,11 +9,21 @@ import * as serviceWorker from "./serviceWorker";
 const rootEl = document.getElementById("root");
 
 let render = () => {
-  ReactDOM.render(<App />, rootEl);
+  ReactDOM.render(
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>,
+    rootEl
+  );
 };
 
 // Adding Hot Reload using Webpacks module.hot
-ReactDOM.render(<App />, rootEl);
+ReactDOM.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  rootEl
+);
 if (module.hot) {
   module.hot.accept(App, () => {
     setTimeout(render);
