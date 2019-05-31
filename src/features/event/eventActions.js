@@ -1,17 +1,17 @@
-export const createEvent = events => {
+export const createEvent = event => {
   return {
     type: "CREATE_EVENT",
     payload: {
-      events
+      event
     }
   };
 };
 
-export const updateEvent = events => {
+export const updateEvent = event => {
   return {
     type: "UPDATE_EVENT",
     payload: {
-      events
+      event
     }
   };
 };
