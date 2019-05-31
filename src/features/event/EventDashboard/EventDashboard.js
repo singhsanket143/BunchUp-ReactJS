@@ -3,64 +3,12 @@ import { Grid, Button } from "semantic-ui-react";
 import cuid from "cuid";
 import EventList from "../EventList/EventList";
 import EventForm from "../EventForm/EventForm";
-
-const eventsDashboard = [
-  {
-    id: "1",
-    title: "Machine Learning Workshop At Coding Blocks",
-    date: "2018-03-27",
-    category: "Technology",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sollicitudin ligula eu leo tincidunt, quis scelerisque magna dapibus. Sed eget ipsum vel arcu vehicula ullamcorper.",
-    city: "Delhi, India",
-    venue: "Coding Blocks, Dwarka",
-    hostedBy: "Sanket Singh",
-    hostPhotoURL: "https://randomuser.me/api/portraits/men/24.jpg",
-    attendees: [
-      {
-        id: "a",
-        name: "Sarthak",
-        photoURL: "https://randomuser.me/api/portraits/men/25.jpg"
-      },
-      {
-        id: "b",
-        name: "Rishab",
-        photoURL: "https://randomuser.me/api/portraits/men/26.jpg"
-      }
-    ]
-  },
-  {
-    id: "2",
-    title: "GSoC Meetup At Coding Blocks",
-    date: "2018-03-28",
-    category: "Technology and Culture",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sollicitudin ligula eu leo tincidunt, quis scelerisque magna dapibus. Sed eget ipsum vel arcu vehicula ullamcorper.",
-    city: "Noida, India",
-    venue: "Coding Blocks Noida, Uttar Pradesh, India",
-    hostedBy: "Rishabh Bansal",
-    hostPhotoURL: "https://randomuser.me/api/portraits/women/22.jpg",
-    attendees: [
-      {
-        id: "b",
-        name: "Tom",
-        photoURL: "https://randomuser.me/api/portraits/men/69.jpg"
-      },
-      {
-        id: "a",
-        name: "Bob",
-        photoURL: "https://randomuser.me/api/portraits/men/54.jpg"
-      }
-    ]
-  }
-];
-
+import { connect } from "react-redux";
 class EventDashboard extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      events: eventsDashboard,
       isOpen: false,
       selectedEvent: null
     };
@@ -118,13 +66,14 @@ class EventDashboard extends React.Component {
 
   render = () => {
     const { selectedEvent } = this.state;
+    const { events } = this.props;
     return (
       <Grid>
         <Grid.Column width={10}>
           <EventList
             deleteEvent={this.handleDeleteEvent}
             onEventOpen={this.handleOpenEvent}
-            events={this.state.events}
+            events={events}
           />
         </Grid.Column>
         <Grid.Column width={6}>
@@ -147,4 +96,8 @@ class EventDashboard extends React.Component {
   };
 }
 
-export default EventDashboard;
+const mapStateToProps = state => {
+  return { events: state.events };
+};
+
+export default connect(mapStateToProps)(EventDashboard);
