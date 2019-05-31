@@ -5,7 +5,7 @@ const initialState = [
     id: "1",
     title: "Machine Learning Workshop At Coding Blocks",
     date: "2018-03-27",
-    category: "Technology",
+    category: "travel",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sollicitudin ligula eu leo tincidunt, quis scelerisque magna dapibus. Sed eget ipsum vel arcu vehicula ullamcorper.",
     city: "Delhi, India",
@@ -29,7 +29,7 @@ const initialState = [
     id: "2",
     title: "GSoC Meetup At Coding Blocks",
     date: "2018-03-28",
-    category: "Culture",
+    category: "culture",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sollicitudin ligula eu leo tincidunt, quis scelerisque magna dapibus. Sed eget ipsum vel arcu vehicula ullamcorper.",
     city: "Noida, India",
