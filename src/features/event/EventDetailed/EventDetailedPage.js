@@ -1,36 +1,12 @@
 import React from "react";
 import { Grid } from "semantic-ui-react";
+import { connect } from "react-redux";
 import EventDetailedInfo from "./EventDetailedInfo";
 import EventDetailedHeader from "./EventDetailedHeader";
 import EventDetailedSidebar from "./EventDetailedSidebar";
 import EventDetailedChat from "./EventDetailedChat";
 
-const event = {
-  id: "1",
-  title: "Machine Learning Workshop At Coding Blocks",
-  date: "2018-03-27",
-  category: "music",
-  description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sollicitudin ligula eu leo tincidunt, quis scelerisque magna dapibus. Sed eget ipsum vel arcu vehicula ullamcorper.",
-  city: "Delhi, India",
-  venue: "Coding Blocks, Dwarka",
-  hostedBy: "Sanket Singh",
-  hostPhotoURL: "https://randomuser.me/api/portraits/men/24.jpg",
-  attendees: [
-    {
-      id: "a",
-      name: "Sarthak",
-      photoURL: "https://randomuser.me/api/portraits/men/25.jpg"
-    },
-    {
-      id: "b",
-      name: "Rishab",
-      photoURL: "https://randomuser.me/api/portraits/men/26.jpg"
-    }
-  ]
-};
-
-const EventDetailedPage = () => {
+const EventDetailedPage = ({ event }) => {
   return (
     <Grid>
       <Grid.Column width={10}>
@@ -45,4 +21,15 @@ const EventDetailedPage = () => {
   );
 };
 
-export default EventDetailedPage;
+const mapStateToProps = (state, ownProps) => {
+  const eventId = ownProps.match.params.id;
+  let event = {};
+  if (eventId && state.events.length > 0) {
+    event = state.events.filter(event => event.id === eventId)[0];
+  }
+  return {
+    event: event
+  };
+};
+
+export default connect(mapStateToProps)(EventDetailedPage);
