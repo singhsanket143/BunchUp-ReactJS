@@ -9,6 +9,26 @@ import TextInput from "../../../app/common/form/TextInput";
 import TextArea from "../../../app/common/form/TextArea";
 import SelectInput from "../../../app/common/form/SelectInput";
 import DateInput from "../../../app/common/form/DateInput";
+import {
+  composeValidators,
+  combineValidators,
+  isRequired,
+  hasLengthGreaterThan
+} from "revalidate";
+
+const validate = combineValidators({
+  title: isRequired({ message: "The event title is required" }),
+  category: isRequired({ message: "The event category is required" }),
+  description: composeValidators(
+    isRequired({ message: "Please enter a description" }),
+    hasLengthGreaterThan(4)({
+      message: "Description needs to be alteast 5 character long"
+    })
+  )(),
+  city: isRequired("city"),
+  venue: isRequired("venue"),
+  date: isRequired("date")
+});
 
 const category = [
   { key: "drinks", text: "Drinks", value: "drinks" },
@@ -124,4 +144,8 @@ export default connect(
     createEvent,
     updateEvent
   }
-)(reduxForm({ form: "eventForm", enableReinitialize: true })(EventForm));
+)(
+  reduxForm({ form: "eventForm", enableReinitialize: true, validate })(
+    EventForm
+  )
+);
