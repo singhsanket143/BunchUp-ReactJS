@@ -1,7 +1,6 @@
 import React from "react";
 import { Grid } from "semantic-ui-react";
 import EventList from "../EventList/EventList";
-import EventForm from "../EventForm/EventForm";
 import { connect } from "react-redux";
 import { deleteEvent } from "../eventActions";
 class EventDashboard extends React.Component {
