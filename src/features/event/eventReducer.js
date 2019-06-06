@@ -1,51 +1,60 @@
 import { createReducer } from "../../app/common/util/ReducerUtil";
 import { CREATE_EVENT, UPDATE_EVENT, DELETE_EVENT } from "./EventConstants";
+
 const initialState = [
   {
     id: "1",
-    title: "Machine Learning Workshop At Coding Blocks",
-    date: "2018-03-27",
-    category: "travel",
+    title: "Trip to Empire State building",
+    date: "2018-03-21",
+    category: "culture",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sollicitudin ligula eu leo tincidunt, quis scelerisque magna dapibus. Sed eget ipsum vel arcu vehicula ullamcorper.",
-    city: "Delhi, India",
-    venue: "Coding Blocks, Dwarka",
-    hostedBy: "Sanket Singh",
-    hostPhotoURL: "https://randomuser.me/api/portraits/men/24.jpg",
+    city: "NY, USA",
+    venue: "Empire State Building, 5th Avenue, New York, NY, USA",
+    venueLatLng: {
+      lat: 40.7484405,
+      lng: -73.98566440000002
+    },
+    hostedBy: "Bob",
+    hostPhotoURL: "https://randomuser.me/api/portraits/men/20.jpg",
     attendees: [
       {
         id: "a",
-        name: "Sarthak",
-        photoURL: "https://randomuser.me/api/portraits/men/25.jpg"
+        name: "Bob",
+        photoURL: "https://randomuser.me/api/portraits/men/20.jpg"
       },
       {
         id: "b",
-        name: "Rishab",
-        photoURL: "https://randomuser.me/api/portraits/men/26.jpg"
+        name: "Tom",
+        photoURL: "https://randomuser.me/api/portraits/men/22.jpg"
       }
     ]
   },
   {
     id: "2",
-    title: "GSoC Meetup At Coding Blocks",
-    date: "2018-03-28",
-    category: "culture",
+    title: "Trip to Punch and Judy Pub",
+    date: "2018-03-18",
+    category: "drinks",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sollicitudin ligula eu leo tincidunt, quis scelerisque magna dapibus. Sed eget ipsum vel arcu vehicula ullamcorper.",
-    city: "Noida, India",
-    venue: "Coding Blocks Noida, Uttar Pradesh, India",
-    hostedBy: "Rishabh Bansal",
-    hostPhotoURL: "https://randomuser.me/api/portraits/women/22.jpg",
+    city: "London, UK",
+    venue: "Punch & Judy, Henrietta Street, London, UK",
+    venueLatLng: {
+      lat: 51.5118074,
+      lng: -0.12300089999996544
+    },
+    hostedBy: "Tom",
+    hostPhotoURL: "https://randomuser.me/api/portraits/men/22.jpg",
     attendees: [
-      {
-        id: "b",
-        name: "Tom",
-        photoURL: "https://randomuser.me/api/portraits/men/69.jpg"
-      },
       {
         id: "a",
         name: "Bob",
-        photoURL: "https://randomuser.me/api/portraits/men/54.jpg"
+        photoURL: "https://randomuser.me/api/portraits/men/20.jpg"
+      },
+      {
+        id: "b",
+        name: "Tom",
+        photoURL: "https://randomuser.me/api/portraits/men/22.jpg"
       }
     ]
   }
