@@ -15,4 +15,3 @@ To get started and run the app:
 ![Alt Text](snaps/5.png?raw=true "Title")
 ![Alt Text](snaps/6.png?raw=true "Title")
 ![Alt Text](snaps/7.png?raw=true "Title")
-![Alt Text](snaps/8.png?raw=true "Title"))
