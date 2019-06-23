@@ -27,7 +27,8 @@ class NavBar extends Component {
   };
 
   render() {
-    const { authenticated } = this.state;
+    const { auth } = this.props;
+    const authenticated = auth.authenticated;
     return (
       <Menu inverted fixed="top">
         <Container>
@@ -66,9 +67,13 @@ class NavBar extends Component {
   }
 }
 
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+
 export default withRouter(
   connect(
-    null,
+    mapStateToProps,
     { openModal }
   )(NavBar)
 );
