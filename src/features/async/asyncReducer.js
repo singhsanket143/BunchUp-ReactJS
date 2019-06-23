@@ -9,11 +9,11 @@ export const asyncActionStarted = state => {
 };
 
 export const asyncActionFinished = state => {
-  return { ...state, loading: true };
+  return { ...state, loading: false };
 };
 
 export const asyncActionError = state => {
-  return { ...state, loading: true };
+  return { ...state, loading: false };
 };
 // eslint-disable-next-line
 export default createReducer(initialState, {

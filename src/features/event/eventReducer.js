@@ -18,8 +18,13 @@ export const deleteEvent = (state, payload) => {
   return [...state.filter(e => e.id !== payload.eventId)];
 };
 
+export const fetchEvents = (state, payload) => {
+  return payload.events;
+};
+
 export default createReducer(initialState, {
   [CREATE_EVENT]: createEvent,
   [UPDATE_EVENT]: updateEvent,
-  [DELETE_EVENT]: deleteEvent
+  [DELETE_EVENT]: deleteEvent,
+  ["FETCH_EVENTS"]: fetchEvents
 });
